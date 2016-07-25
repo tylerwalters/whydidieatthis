@@ -7,6 +7,7 @@ const minifycss = require('gulp-minify-css');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const webpack = require('gulp-webpack');
 
 gulp.task('lint', () => {
   return gulp.src(['src/scripts/**/*.js'])
