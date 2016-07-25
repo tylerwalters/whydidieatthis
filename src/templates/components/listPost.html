@@ -1,0 +1,7 @@
+<article>
+  <h2>{{$ctrl.post.title.rendered}}</h2>
+
+  <div ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></div>
+
+  <a ui-sref="detail({id: $ctrl.post.id})">Read more</a>
+</article>

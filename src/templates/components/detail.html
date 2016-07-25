@@ -1,0 +1,5 @@
+<article>
+  <h1>{{$ctrl.post.title.rendered}}</h1>
+
+  <div ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></div>
+</article>
