@@ -56,12 +56,13 @@ gulp.task('imagemin', () => {
     .pipe(gulp.dest('./dist/images'));
 });
 
-gulp.task('watch', () => {
+gulp.task('watchers', () => {
   gulp.watch('src/styles/**/*.scss', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['babel']);
   gulp.watch('src/templates/**/*.html', ['templates']);
   gulp.watch('src/images/*', ['imagemin']);
 });
 
+gulp.task('watch', ['lint', 'sass', 'babel', 'templates', 'imagemin', 'css-min', 'js-min', 'watchers']);
 gulp.task('minify', ['css-min', 'js-min', 'imagemin']);
 gulp.task('build', ['lint', 'sass', 'babel', 'templates', 'imagemin', 'css-min', 'js-min']);
