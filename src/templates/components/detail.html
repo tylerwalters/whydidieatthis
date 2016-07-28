@@ -1,5 +1,7 @@
-<article>
-  <h1>{{$ctrl.post.title.rendered}}</h1>
+<article class="detail">
+  <img class="featured-image" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered">
 
-  <div ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></div>
+  <h1 class="title" ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></h1>
+
+  <main class="content" ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></main>
 </article>
