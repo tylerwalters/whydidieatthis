@@ -1,6 +1,4 @@
-<div class="card-header" ng-style="{'background-image':'url(' + $ctrl.post.featured_image_url + ')'}"></div>
-
-<!--<img class="card-img-top" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered" ng-if="$ctrl.post.featured_media">-->
+<img class="card-img-top" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered" ng-if="$ctrl.post.featured_media">
 
 <main class="content card-block">
   <h2 ng-bind-html="$ctrl.post.title.rendered | trustAsHTML" class="card-title"></h2>
