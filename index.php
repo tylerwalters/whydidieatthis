@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-  <div ui-view></div>
+  <div class="row" ui-view></div>
 
 <?php get_footer(); ?>
