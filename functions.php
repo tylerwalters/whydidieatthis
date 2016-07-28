@@ -8,7 +8,9 @@ function enqueue_scripts() {
   wp_enqueue_script('app-script', get_template_directory_uri() . '/dist/scripts/app.js', array('ui-router'), false, true);
   wp_localize_script('app-script', 'constants', array(
       'apiUrl' => rest_get_url_prefix() . '/wp/v2/',
-      'templateDir' => get_template_directory_uri() . '/'
+      'templateDir' => get_template_directory_uri() . '/',
+      'nonce' => wp_create_nonce('wp_rest'),
+      'isAdmin' => current_user_can('administrator')
     )
   );
 }
@@ -50,9 +52,42 @@ function reviews_cpt() {
   );
 
   register_post_type('reviews', $args);
+  register_taxonomy_for_object_type('category', 'reviews');
+  register_taxonomy_for_object_type('post_tag', 'reviews');
 }
 
 add_action('init', 'reviews_cpt');
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
+add_theme_support('post-thumbnails');
 
+function get_thumbnail_url($post){
+  if(has_post_thumbnail($post['id'])){
+    $imgArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post['id'] ), 'full' );
+    $imgURL = $imgArray[0];
+    return $imgURL;
+  } else {
+    return false;
+  }
+}
+
+function rest_thumbnail_urls() {
+  register_rest_field( 'post',
+    'featured_image_url',
+    array(
+      'get_callback'    => 'get_thumbnail_url',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+  register_rest_field( 'reviews',
+    'featured_image_url',
+    array(
+      'get_callback'    => 'get_thumbnail_url',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+}
+
+add_action('rest_api_init', 'rest_thumbnail_urls');
 ?>
