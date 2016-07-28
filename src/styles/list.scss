@@ -1,0 +1,40 @@
+// List
+
+list-post.card {
+  background-color: $wdiet-contentbg;
+  margin-bottom: 30px;
+
+  div.card-header {
+    background-size: cover;
+    background-position: center center;
+    height: 300px;
+  }
+
+  main.content {
+    padding: 30px;
+
+    @include media-breakpoint-up(sm) {
+      height: 450px;
+    }
+    @include media-breakpoint-up(md) {
+      height: 400px;
+    }
+  }
+
+  aside.map {
+    padding: 0;
+
+    iframe {
+      display: block;
+    }
+  }
+}
+
+.card-columns {
+  @include media-breakpoint-up(xs) {
+    column-count: 1;
+  }
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+}
