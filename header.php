@@ -16,7 +16,9 @@
 <body>
 
 <header class="container">
-  <h2><a href="/"><?php echo bloginfo('name'); ?></a></h2>
+  <div class="row">
+    <h2 class="col-xs-12"><a href="<?= get_site_url() ?>"><?= bloginfo('name'); ?></a></h2>
+  </div>
 </header>
 
 <main class="container content">
