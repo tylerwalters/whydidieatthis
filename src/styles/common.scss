@@ -12,6 +12,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-title;
   text-transform: uppercase;
+  color: #373a3c;
+
+  a {
+    color: #373a3c;
+
+    &:hover {
+      color: #373a3c;
+      text-decoration: none;
+    }
+  }
 }
 
 img {
