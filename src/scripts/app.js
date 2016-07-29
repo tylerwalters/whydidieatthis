@@ -45,6 +45,22 @@ app.factory('Store', ['$resource', '$rootScope', function ($resource, $rootScope
   return Store;
 }]);
 
+function LogoController($scope, $element, $attrs, $rootScope) {
+  let ctrl = this;
+
+  ctrl.path = '/';
+  ctrl.logo = constants.templateDir + 'dist/images/logo.png';
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+    ctrl.path = toState.url;
+  });
+}
+
+app.component('logo', {
+  templateUrl: constants.templateDir + 'dist/templates/components/logo.html',
+  controller: LogoController
+});
+
 function ListController($scope, $element, $attrs, Store, $rootScope) {
   let ctrl = this;
 
@@ -103,7 +119,8 @@ app.component('detail', {
   controller: DetailController
 });
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider .html5Mode(true);
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('list', {

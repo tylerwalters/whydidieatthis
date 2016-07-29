@@ -1,0 +1,25 @@
+// Logo
+
+header.branding {
+  margin: 30px auto;
+  color: $wdiet-contentbg;
+  font-size: .85rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: $wdiet-contentbg;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.25rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.34rem;
+      margin-top: 16px;
+    }
+  }
+}
