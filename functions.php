@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support('post-thumbnails');
+
 function enqueue_scripts() {
   wp_enqueue_style('style-css', get_template_directory_uri() . '/dist/styles/style.css');
   wp_enqueue_script('angular-core', get_template_directory_uri() . '/node_modules/angular/angular.min.js', array('jquery'), false, true);
@@ -15,54 +17,43 @@ function enqueue_scripts() {
   );
 }
 
-function reviews_cpt() {
+add_action('wp_enqueue_scripts', 'enqueue_scripts');
+
+function city_taxonomy() {
   $labels = array(
-    'name'               => _x('Reviews', 'post type general name'),
-    'singular_name'      => _x('Review', 'post type singular name'),
-    'menu_name'          => _x('Reviews', 'admin menu'),
-    'name_admin_bar'     => _x('Review', 'add new on admin bar'),
-    'add_new'            => _x('Add New', 'reviews'),
-    'add_new_item'       => __('Add New Review'),
-    'new_item'           => __('New Review'),
-    'edit_item'          => __('Edit Review'),
-    'view_item'          => __('View Review'),
-    'all_items'          => __('All Reviews'),
-    'search_items'       => __('Search Reviews'),
-    'parent_item_colon'  => __('Parent Reviews:'),
-    'not_found'          => __('No reviews found.'),
-    'not_found_in_trash' => __('No reviews found in Trash.')
+    'name' => _x('City', 'taxonomy general name'),
+    'singular_name' => _x('City', 'taxonomy singular name'),
+    'search_items' => __('Search Cities'),
+    'popular_items' => __('Popular Cities'),
+    'all_items' => __('All Cities'),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __('Edit City'),
+    'update_item' => __('Update City'),
+    'add_new_item' => __('Add New City'),
+    'new_item_name' => __('New City Name'),
+    'separate_items_with_commas' => __('Separate cities with commas'),
+    'add_or_remove_items' => __('Add or remove cities'),
+    'choose_from_most_used' => __('Choose from the most used cities'),
+    'menu_name' => __('Cities'),
   );
 
-  $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'show_in_menu'       => true,
-    'query_var'          => true,
-    'rewrite'            => array('slug' => 'reviews'),
-    'capability_type'    => 'post',
-    'has_archive'        => true,
-    'hierarchical'       => false,
-    'menu_position'      => null,
-    'show_in_rest'       => true,
-    'rest_base'          => 'reviews',
-    'rest_controller_class' => 'WP_REST_Posts_Controller',
-    'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
-  );
-
-  register_post_type('reviews', $args);
-  register_taxonomy_for_object_type('category', 'reviews');
-  register_taxonomy_for_object_type('post_tag', 'reviews');
+  register_taxonomy('city', array('post', 'reviews'), array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array('slug' => 'city'),
+  ));
 }
 
-add_action('init', 'reviews_cpt');
-add_action('wp_enqueue_scripts', 'enqueue_scripts');
-add_theme_support('post-thumbnails');
+add_action('init', 'city_taxonomy', 0);
 
-function get_thumbnail_url($post){
-  if(has_post_thumbnail($post['id'])){
-    $imgArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post['id'] ), 'full' );
+function get_thumbnail_url($post) {
+  if (has_post_thumbnail($post['id'])) {
+    $imgArray = wp_get_attachment_image_src(get_post_thumbnail_id($post['id']), 'featuredImageCropped');
     $imgURL = $imgArray[0];
     return $imgURL;
   } else {
@@ -71,23 +62,16 @@ function get_thumbnail_url($post){
 }
 
 function rest_thumbnail_urls() {
-  register_rest_field( 'post',
+  register_rest_field('post',
     'featured_image_url',
     array(
-      'get_callback'    => 'get_thumbnail_url',
+      'get_callback' => 'get_thumbnail_url',
       'update_callback' => null,
-      'schema'          => null,
-    )
-  );
-  register_rest_field( 'reviews',
-    'featured_image_url',
-    array(
-      'get_callback'    => 'get_thumbnail_url',
-      'update_callback' => null,
-      'schema'          => null,
+      'schema' => null,
     )
   );
 }
 
 add_action('rest_api_init', 'rest_thumbnail_urls');
+add_image_size('featuredImageCropped', 1100, 500, true);
 ?>
