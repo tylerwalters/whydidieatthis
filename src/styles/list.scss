@@ -1,28 +1,26 @@
 // List
 
-list-post.card {
+post.card {
   background-color: $wdiet-contentbg;
   margin-bottom: 30px;
+  border: 2px solid $wdiet-red-darkest;
 
-  div.card-header {
-    background-size: cover;
-    background-position: center center;
-    height: 300px;
+  .card-img-top {
+    border-radius: 0.13rem 0.13rem 0 0;
   }
 
   main.content {
     padding: 30px;
 
-    @include media-breakpoint-up(sm) {
-      height: 450px;
-    }
-    @include media-breakpoint-up(md) {
-      height: 400px;
+    h2 {
+      margin: -30px -30px 30px;
     }
   }
 
   aside.map {
     padding: 0;
+    border-top: 5px solid #E2861E;
+    background-color: $wdiet-red-lightest;
 
     iframe {
       display: block;

@@ -2,24 +2,8 @@
 
 detail {
   article.detail {
-    border: 2px solid $wdiet-red-darkest;
-
-    h1.title {
-      background: $wdiet-gold url('../images/asfalt-dark.png') repeat center center;
-      padding: 20px 40px;
-      margin: 0;
-      border: 5px solid $wdiet-orange;
-      border-left: none;
-      border-right: none;
-    }
-
     img.featured-image {
       width: 100%;
-    }
-
-    main.content {
-      background-color: $wdiet-contentbg;
-      padding: 40px;
     }
   }
 
