@@ -1,3 +1,5 @@
-<div class="card-columns">
+<div class="card-columns" ng-if="$ctrl.posts">
   <post ng-repeat="post in $ctrl.posts" post="post" class="card"></post>
 </div>
+
+<loader ng-if="!$ctrl.posts"></loader>
