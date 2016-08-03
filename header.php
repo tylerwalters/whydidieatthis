@@ -26,4 +26,8 @@
   </div>
 </header>
 
-<main class="container content">
+<nav>
+  <a ui-sref="about">About</a>
+</nav>
+
+<main class="container">
