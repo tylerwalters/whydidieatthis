@@ -4,8 +4,8 @@ import uiRouter from 'angular-ui-router';
 import routing from './app.config';
 import home from './views/home';
 import single from './views/single';
-import logo from './components/logo';
-import loader from './components/loader';
+import logo from './components/logo.component';
+import loader from './components/loader.component';
 
 angular.module('app', [uiRouter, home, single])
   .config(routing)
