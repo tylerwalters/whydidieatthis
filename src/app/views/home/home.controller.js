@@ -5,6 +5,9 @@ export default class HomeController {
   }
 
   $onInit () {
-    this.loop = this.postService.query();
+    this.postService.query().$promise
+      .then(res => {
+        this.posts = res;
+      });
   }
 }

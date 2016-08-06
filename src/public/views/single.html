@@ -1,1 +1,11 @@
-<detail class="col-xs-12" single="$ctrl.single"></detail>
+<div class="col-xs-12">
+  <article class="detail page" ng-if="$ctrl.post">
+    <img class="featured-image" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered">
+
+    <h1 class="title" ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></h1>
+
+    <main class="content" ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></main>
+  </article>
+
+  <loader ng-if="!$ctrl.post"></loader>
+</div>

@@ -6,6 +6,9 @@ export default class SingleController {
   }
 
   $onInit () {
-    this.single = this.postService.query({'filter[name]': this.name});
+    this.postService.query({'filter[name]': this.name}).$promise
+      .then(res => {
+        this.post = res[0];
+      });
   }
 }
