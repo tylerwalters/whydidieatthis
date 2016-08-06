@@ -1,5 +1,5 @@
 import templateUrl from 'components/logo.html';
-import logo from '../../../public/images/logo.png';
+import logo from '../../public/images/logo.png';
 
 class controller {
   constructor ($rootScope) {

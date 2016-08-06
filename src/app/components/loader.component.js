@@ -1,5 +1,5 @@
 import templateUrl from 'components/loader.html';
-import spinner from '../../../public/images/ring-alt.svg';
+import spinner from '../../public/images/ring-alt.svg';
 
 class controller {
   constructor () {
