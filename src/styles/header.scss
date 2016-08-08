@@ -1,4 +1,4 @@
-// Logo
+// Header
 
 header.branding {
   margin: 30px auto;
@@ -20,6 +20,28 @@ header.branding {
     @include media-breakpoint-up(xl) {
       font-size: 1.34rem;
       margin-top: 16px;
+    }
+  }
+}
+
+// Nav
+
+nav.navbar {
+  background: $wdiet-red-darker url('../public/images/asfalt-dark.png') repeat center center;
+  padding: 0 20px;
+  margin: 0 0 30px;
+  border: 2px solid $wdiet-red-darkest;
+  border-radius: 0.13rem;
+
+  a.nav-link {
+    color: $wdiet-contentbg;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+
+    &.active, &:hover {
+      background-color: $wdiet-red-darkest;
     }
   }
 }
