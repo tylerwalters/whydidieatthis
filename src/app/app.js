@@ -8,7 +8,7 @@ import single from './views/single';
 import logo from './components/logo.component';
 import loader from './components/loader.component';
 
-angular.module('app', [uiRouter, home, single, page])
+angular.module('app', [uiRouter, home, page, single])
   .config(routing)
   .component('logo', logo)
   .component('loader', loader)

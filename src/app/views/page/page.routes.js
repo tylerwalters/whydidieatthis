@@ -5,7 +5,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
   $urlMatcherFactoryProvider.strictMode(false);
   $stateProvider
     .state('about', {
-      url: '/page/about',
+      url: '/about',
       templateUrl: templateUrl,
       params: {id: 39, name: 'about'},
       controller: 'PageController',
@@ -13,7 +13,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
       bindToController: true
     })
     .state('rankings', {
-      url: '/page/rankings',
+      url: '/rankings',
       templateUrl: templateUrl,
       params: {id: 346, name: 'rankings'},
       controller: 'PageController',
