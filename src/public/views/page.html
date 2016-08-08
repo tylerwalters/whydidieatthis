@@ -1,0 +1,9 @@
+<div class="col-xs-12">
+  <article class="detail page" ng-if="$ctrl.page">
+    <h1 class="title" ng-bind-html="$ctrl.page.title.rendered | trustAsHTML"></h1>
+
+    <main class="content" ng-bind-html="$ctrl.page.content.rendered | trustAsHTML"></main>
+  </article>
+
+  <loader ng-if="!$ctrl.page"></loader>
+</div>
