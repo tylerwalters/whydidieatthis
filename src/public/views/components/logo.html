@@ -1,11 +1,9 @@
 <h1 ng-if="$ctrl.path === '/'">
-  <a ui-sref="home()">
-    <img ng-src="{{$ctrl.logo}}" alt="Why Did I Eat This?">
-  </a>
+  <img ng-src="{{$ctrl.logo}}" alt="Why Did I Eat This?">
 </h1>
 
 <h2 ng-if="$ctrl.path !== '/'">
-  <a ui-sref="home()">
+  <a ui-sref="home">
     <img ng-src="{{$ctrl.logo}}" alt="Why Did I Eat This?">
   </a>
 </h2>
