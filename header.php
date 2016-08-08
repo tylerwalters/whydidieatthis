@@ -26,8 +26,18 @@
   </div>
 </header>
 
-<nav>
-  <a ui-sref="about">About</a>
-</nav>
+<div class="container">
+  <nav class="navbar navbar-dark">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-toggleable-xs" id="primary-nav">
+      <a ui-sref="home" class="nav-link">Home</a>
+      <a ui-sref="about" class="nav-link">About</a>
+      <a ui-sref="rankings" class="nav-link">Rankings</a>
+    </div>
+    <post-filter></post-filter>
+  </nav>
+</div>
 
 <main class="container">
