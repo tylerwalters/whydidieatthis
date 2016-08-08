@@ -3,13 +3,7 @@ export default class PostService {
     'ngInject';
     return $resource(
       constants.apiUrl + 'posts/:ID',
-      {ID: '@id'},
-      {
-        'getPosts': {
-          method: 'GET',
-          isArray: true
-        }
-      }
+      {ID: '@id'}
     );
   }
 }

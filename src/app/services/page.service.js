@@ -3,13 +3,7 @@ export default class PageService {
     'ngInject';
     return $resource(
       constants.apiUrl + 'pages/:ID',
-      {ID: '@id'},
-      {
-        'getPages': {
-          method: 'GET',
-          isArray: true
-        }
-      }
+      {ID: '@id'}
     );
   }
 }
