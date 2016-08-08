@@ -1,17 +1,17 @@
-<a  ui-sref="single({name: $ctrl.post.slug})">
+<a  ui-sref="single({name: $ctrl.post.slug, id: $ctrl.post.id})">
   <img class="card-img-top" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered" ng-if="$ctrl.post.featured_media">
 </a>
 
 <main class="content card-block">
   <h2 class="card-title title">
-    <a ui-sref="single({name: $ctrl.post.slug})">
+    <a ui-sref="single({name: $ctrl.post.slug, id: $ctrl.post.id})">
       <span ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></span>
     </a>
   </h2>
 
   <div ng-bind-html="$ctrl.post.excerpt.rendered | trustAsHTML" class="card-text"></div>
 
-  <a ui-sref="single({name: $ctrl.post.slug})">Read more</a>
+  <a ui-sref="single({name: $ctrl.post.slug, id: $ctrl.post.id})">Read more</a>
 </main>
 
 <aside class="map card-footer" ng-if="$ctrl.mapUrl">
