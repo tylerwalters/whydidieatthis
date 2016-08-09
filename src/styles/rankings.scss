@@ -1,0 +1,21 @@
+// Rankings
+
+.ranking-table {
+  thead th {
+    border-color: $wdiet-red-darker;
+    background-color: $wdiet-red-darker;
+    color: $wdiet-contentbg;
+  }
+  tbody {
+    th {
+      border-color: $wdiet-red-medium;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+    td {
+      border-color: $wdiet-red-medium;
+      vertical-align: middle;
+    }
+  }
+}
