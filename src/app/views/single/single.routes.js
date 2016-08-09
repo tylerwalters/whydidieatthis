@@ -5,8 +5,9 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
   $urlMatcherFactoryProvider.strictMode(false);
   $stateProvider
     .state('single', {
-      url: '/:name',
+      url: '/:type/:name',
       templateUrl: templateUrl,
+      params: {id: null},
       controller: 'SingleController',
       controllerAs: '$ctrl',
       bindToController: true
