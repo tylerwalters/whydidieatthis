@@ -1,0 +1,163 @@
+<div class="col-xs-12">
+  <article class="detail page" ng-if="$ctrl.page">
+    <h1 class="title" ng-bind-html="$ctrl.page.title.rendered | trustAsHTML"></h1>
+
+    <main class="content">
+      <table class="table table-striped table-responsive table-bordered ranking-table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Place</th>
+          <th>Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><a ui-sref="single({name: 'atl-wings', id: 1021})">ATL Wings</a></td>
+          <td>Holding it down for the South almost single-handedly, ATL Wings takes pride in cooking a great wing and making a flavorful sauce. Also, Kool-Aid.</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td><a ui-sref="single({id: 1099, name: 'draft-house-on-the-reef'})">The Reef</a></td>
+          <td>Dark and dank and fighting a bad rep for hooliganism, this wing joint formerly known as Draft House on the Reef blew our socks off with their huge, spicy, quality wings.</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td><a ui-sref="single({id: 296, name: 'jts-bar-grill'})">JT's Bar &amp; Grill</a></td>
+          <td>The neighborhood bar you wish you had around the corner. Fried-then-sauced-then-grilled-then-sauced again to perfection.</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td><a ui-sref="single({id: 262, name: 'angie-jimmys-italian-pizza'})">Angie &amp; Jimmy’s Italian Pizza</a></td>
+          <td>Amazing in its simplicity and stunning in its artful mastery of the complete lack of ambiance. Just the perfectly natural wing.</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td><a ui-sref="single({id: 922, name: 'nypd-pizza'})">NYPD Pizza</a></td>
+          <td>You don't expect pizza joints to have wings this massive or this well-cooked. NYPD does.</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td><a ui-sref="single({id: 562, name: 'teakwoods-tavern-grill'})">Teakwoods</a></td>
+          <td>The Phoenix-area mainstay that replaced Long Wongs. Few match their consistency or their suicide heat.</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td><a ui-sref="single({id: 209, name: 'rosie-mccaffreys'})">Rosie McCaffrey's</a></td>
+          <td>Irish pub in the heart of Phoenix with a shockingly good and unique hot wing.</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td><a ui-sref="single({id: 848, name: 'the-vine-tavern-and-eatery'})">The Vine</a></td>
+          <td>Another local legend sports bar with maybe the best-tasting hot sauce in the city that offsets their tiny wings. Go on Thursdays for Stein Night.</td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td><a ui-sref="single({id: 989, name: 'cogburns-big-wings'})">Cogburn’s Big Wings</a></td>
+          <td>New kid on the block with huge wings &amp; great tasting suicide sauce that is hit-or-miss on heat.</td>
+        </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td><a ui-sref="single({id: 530, name: 'zipps-sports-grill'})">Zipps Burgers &amp; Billiards</a></td>
+          <td>A local chain of sports bars that do wings the right way, for a great value, every time.</td>
+        </tr>
+        <tr>
+          <th scope="row">11</th>
+          <td><a ui-sref="single({id: 491, name: 'long-wongs'})">Long Wong's</a></td>
+          <td>The legend of all local legends, since franchised, that is hit-or-miss on how well the wing is cooked but has a variety of sauces.</td>
+        </tr>
+        <tr>
+          <th scope="row">12</th>
+          <td><a ui-sref="single({id: 1158, name: 'rehab-burger-therapy'})">Rehab Burger Therapy</a></td>
+          <td>A burger joint by trade (a damn good one too) Rehab doesn't just think of wings as an afterthought, and their Pig Wings are STUPID good...but they're not wings).</td>
+        </tr>
+        <tr>
+          <th scope="row">13</th>
+          <td><a ui-sref="single({id: 160, name: 'venezias-pizzeria'})">Venezia's Pizzeria</a></td>
+          <td>Maybe the best place in the city to get a slice of pizza, you won't be mad for ordering the wings as well. Not their specialty, but effective anyway.</td>
+        </tr>
+        <tr>
+          <th scope="row">14</th>
+          <td><a ui-sref="single({id: 1063, name: 'casey-moores-oyster-house'})">Casey Moore's Oyster House</a></td>
+          <td>You're coming here for atmosphere and beer so you'd be forgiven for overlooking these surprisingly solid pub wings. Piss in the Blarney Stone.</td>
+        </tr>
+        <tr>
+          <th scope="row">15</th>
+          <td><a ui-sref="single({id: 822, name: 'cks-tavern-and-grill'})">CK’s Tavern</a></td>
+          <td>An Ahwatukee favorite with solid wings and a good happy hour vibe.</td>
+        </tr>
+        <tr>
+          <th scope="row">16</th>
+          <td><a ui-sref="single({id: 688, name: 'arcadia-tavern'})">Arcadia Tavern</a></td>
+          <td>Our most debated spot. Sports bar next door to JTs that grills their wings too...but not nearly as well as their neighbor.</td>
+        </tr>
+        <tr>
+          <th scope="row">17</th>
+          <td><a ui-sref="single({id: 892, name: 'native-new-yorker'})">Native New Yorker</a></td>
+          <td>2012's Wingstock King of Wings (somehow), they're breaded and small-ish but often decent enough to do the trick.</td>
+        </tr>
+        <tr>
+          <th scope="row">18</th>
+          <td><a ui-sref="single({id: 720, name: 'half-moon-sports-grill'})">Half Moon</a></td>
+          <td>A former New Times Best Of winner for their wings, we were left scratching our head at the sub-par cooking and plain-jane sauces.</td>
+        </tr>
+        <tr>
+          <th scope="row">19</th>
+          <td><a ui-sref="single({id: 1188, name: 'the-legend-of-casey-jones-grill'})">Casey Jones Pub &amp; Grill</a></td>
+          <td>North Phoenix joint that we wouldn't go out of our way to eat again at, but if you're there and hungry, they're edible.</td>
+        </tr>
+        <tr>
+          <th scope="row">20</th>
+          <td><a ui-sref="single({id: 605, name: 'rino-ds-pizza-and-wings'})">Rino D’s Pizza &amp; Wings</a></td>
+          <td>Honestly maybe the best delivery wings we've ever had, but delivery can't stand up to fresh unfortunately. Not by a long shot.</td>
+        </tr>
+        <tr>
+          <th scope="row">21</th>
+          <td><a ui-sref="single({id: 429, name: 'flancers-cafe'})">Flancer's Cafe</a></td>
+          <td>The absolute worst wings we've ever had. Avoid like the plague. Or, if forced there, commit suicide instead.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!--Stadium Club-->
+      <!--Monkey Pants-->
+      <!--{id: 1681, name: 'hungry-monk}-->
+      <!--{id: 1509, name: 'keegans-grill-and-taproom}-->
+      <!--{id: 1392, name: 'angels-trumpet-ale-house}-->
+      <!--{id: 1353, name: 'four-peaks-brewing-part-2}-->
+      <!--{id: 1293, name: 'four-peaks-part-1}-->
+
+      <h2>Retired</h2>
+
+      <table class="table table-striped table-responsive table-bordered ranking-table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Place</th>
+          <th>Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><a ui-sref="single({id: 165, name: 'ny-boyz-subz-n-wingz'})">NY Boyz Subz N Wingz</a></td>
+          <td>The undisputed king. Few have come close, none have done better than the mighty NY Boyz. And don't even try that suicide. Sadly, they have been closed a long time now with little hope of a return.</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td><a ui-sref="single({id: 118, name: 'buffalo-browns-wings-things'})">Buffalo Brown's Wings &amp; Things</a></td>
+          <td>Shithole dive joint with a special blend of flavors for their sauces that isn't afraid to bring the heat, or the sauce.</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td><a ui-sref="single({id: 9, name: 'mister-gs-pizzeria'})">Mister G's Pizzeria</a></td>
+          <td>A now-closed restaurant, Mister G's was our first foray into wing reviewing and is still better than some of the joints we tasted, even closed.</td>
+        </tr>
+        </tbody>
+      </table>
+    </main>
+  </article>
+
+  <loader ng-if="!$ctrl.page"></loader>
+</div>
