@@ -1,4 +1,5 @@
-import templateUrl from 'page.html';
+import pageTemplate from 'page.html';
+import rankingsTemplate from 'rankings.html';
 
 export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
   'ngInject';
@@ -6,7 +7,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
   $stateProvider
     .state('about', {
       url: '/about',
-      templateUrl: templateUrl,
+      templateUrl: pageTemplate,
       params: {id: 39, name: 'about'},
       controller: 'PageController',
       controllerAs: '$ctrl',
@@ -14,7 +15,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
     })
     .state('rankings', {
       url: '/rankings',
-      templateUrl: templateUrl,
+      templateUrl: rankingsTemplate,
       params: {id: 346, name: 'rankings'},
       controller: 'PageController',
       controllerAs: '$ctrl',
@@ -22,7 +23,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
     })
     .state('page', {
       url: '/page/:page',
-      templateUrl: templateUrl,
+      templateUrl: pageTemplate,
       params: {id: null},
       controller: 'PageController',
       controllerAs: '$ctrl',
