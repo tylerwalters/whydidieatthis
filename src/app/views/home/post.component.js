@@ -20,6 +20,7 @@ export default {
   controller,
   templateUrl,
   bindings: {
-    post: '<post'
+    post: '<post',
+    category: '<category'
   }
 };
