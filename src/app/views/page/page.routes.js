@@ -16,10 +16,7 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
     .state('rankings', {
       url: '/rankings',
       templateUrl: rankingsTemplate,
-      params: {id: 346, name: 'rankings'},
-      controller: 'PageController',
-      controllerAs: '$ctrl',
-      bindToController: true
+      params: {id: 346, name: 'rankings'}
     })
     .state('page', {
       url: '/page/:page',
