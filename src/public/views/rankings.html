@@ -1,6 +1,6 @@
 <div class="col-xs-12">
-  <article class="detail page" ng-if="$ctrl.page">
-    <h1 class="title" ng-bind-html="$ctrl.page.title.rendered | trustAsHTML"></h1>
+  <article class="detail page">
+    <h1 class="title">Rankings</h1>
 
     <main class="content">
       <table class="table table-striped table-responsive table-bordered ranking-table">
@@ -158,6 +158,4 @@
       </table>
     </main>
   </article>
-
-  <loader ng-if="!$ctrl.page"></loader>
 </div>
