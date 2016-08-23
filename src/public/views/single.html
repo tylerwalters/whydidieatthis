@@ -5,6 +5,24 @@
     <h1 class="title" ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></h1>
 
     <main class="content" ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></main>
+
+    <aside class="response">
+      <h2 ng-if="$ctrl.post.author === 1">Xavvi's Response</h2>
+      <h2 ng-if="$ctrl.post.author === 2">Tyler's Response</h2>
+      <div ng-bind-html="$ctrl.post.acf.response | trustAsHTML"></div>
+    </aside>
+
+    <aside class="meta row">
+      <div class="map col-xs-12 col-sm-6">
+
+      </div>
+      <div class="info col-xs-12 col-sm-6">
+        <a ng-href="{{$ctrl.post.acf.website}}">
+          <h3 ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></h3>
+        </a>
+        <p>{{$ctrl.post.acf.address}}</p>
+      </div>
+    </aside>
   </article>
 
   <loader ng-if="!$ctrl.post"></loader>
