@@ -1,13 +1,19 @@
+const State = new WeakMap();
+
 export default class HomeController {
-  constructor (postService) {
+  constructor (stateService) {
     'ngInject';
-    this.postService = postService;
+    
+    State.set(this, stateService);
   }
 
   $onInit () {
-    this.postService.query().$promise
-      .then(res => {
-        this.posts = res;
-      });
+    State.get(this).getCategories().then(res => {
+      this.categories = Array.isArray(res) ? State.get(this).convertCategories(res) : res;
+    });
+
+    State.get(this).getPosts().then(res => {
+      this.posts = res;
+    });
   }
 }
