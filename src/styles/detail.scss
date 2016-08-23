@@ -1,10 +1,22 @@
 // Detail
 
-detail {
-  article.detail {
-    img.featured-image {
-      width: 100%;
-    }
+article.detail {
+  background-color: $wdiet-contentbg;
+
+  img.featured-image {
+    width: 100%;
+  }
+
+  aside.response {
+    background: $wdiet-orange url('../public/images/asfalt-dark.png') repeat center center;
+    border-top: 5px solid $wdiet-gold;
+    border-bottom: 5px solid $wdiet-gold;
+    padding: 40px;
+    color: #fff;
+  }
+
+  aside.meta {
+    padding: 40px;
   }
 
   .wp-caption.aligncenter {
