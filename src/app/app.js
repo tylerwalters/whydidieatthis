@@ -13,4 +13,7 @@ angular.module('app', [uiRouter, state, home, page, single])
   .config(routing)
   .component('logo', logo)
   .component('loader', loader)
-  .filter('trustAsHTML', ['$sce', $sce => text => $sce.trustAsHtml(text)]);
+  .filter('trustAsHTML', ['$sce', $sce => text => $sce.trustAsHtml(text)])
+  .run(function($rootScope, $state){
+    $rootScope.$state = $state;
+  });
