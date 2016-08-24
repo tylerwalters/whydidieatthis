@@ -3,8 +3,25 @@
 article.detail {
   background-color: $wdiet-contentbg;
 
-  img.featured-image {
-    width: 100%;
+  div.featured-image {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    div.featured-image-caption {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      color: $wdiet-contentbg;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 
   aside.response {

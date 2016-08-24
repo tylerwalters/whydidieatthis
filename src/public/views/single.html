@@ -1,12 +1,15 @@
 <div class="col-xs-12">
   <article class="detail page" ng-if="$ctrl.post">
-    <img class="featured-image" ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered">
+    <div class="featured-image">
+      <img ng-src="{{$ctrl.post.featured_image_url}}" alt="$ctrl.post.title.rendered">
+      <div class="featured-image-caption" ng-if="$ctrl.post.acf.featured_image_caption" ng-bind-html="$ctrl.post.acf.featured_image_caption | trustAsHTML"></div>
+    </div>
 
     <h1 class="title" ng-bind-html="$ctrl.post.title.rendered | trustAsHTML"></h1>
 
     <main class="content" ng-bind-html="$ctrl.post.content.rendered | trustAsHTML"></main>
 
-    <aside class="response">
+    <aside class="response" ng-if="$ctrl.post.acf.response">
       <h2 ng-if="$ctrl.post.author === 1">Xavvi's Response</h2>
       <h2 ng-if="$ctrl.post.author === 2">Tyler's Response</h2>
       <div ng-bind-html="$ctrl.post.acf.response | trustAsHTML"></div>
