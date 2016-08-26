@@ -13,6 +13,18 @@ angular.module('app', [uiRouter, home, page, single])
   .component('logo', logo)
   .component('loader', loader)
   .filter('trustAsHTML', ['$sce', $sce => text => $sce.trustAsHtml(text)])
-  .run(function($rootScope, $state){
-    $rootScope.$state = $state;
+  .filter('pagetitle', () => text => {
+    if (!text) return '';
+
+    // let split = text.includes(' ') ? ' ' : '-';
+    let title = text.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    return title + ' - Why Did I Eat This?';
+  })
+  .run(function($rootScope){
+    $rootScope.$on('$stateChangeSuccess', function() {
+      window.scrollTo(0, 0);
+    })
   });
