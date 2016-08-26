@@ -1,5 +1,5 @@
 export default class HomeController {
-  constructor (posts, categories) {
+  constructor (posts, categories, $rootScope) {
     'ngInject';
 
     this.categories = categories;
@@ -9,7 +9,9 @@ export default class HomeController {
       return this.categories.filter(function(cat) {
         return cat.id === id;
       })[0];
-    }
+    };
+
+    $rootScope.pageTitle = 'Phoenix Wings and Beer';
   }
 
   $onInit () {
