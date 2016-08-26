@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title><?php bloginfo('name'); ?></title>
+  <title ng-bind-html="pageTitle | pagetitle | trustAsHTML">Phoenix Wings and Beer - Why Did I Eat This?</title>
 
   <?php wp_head(); ?>
 
