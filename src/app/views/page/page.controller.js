@@ -1,16 +1,11 @@
-const State = new WeakMap();
-
 export default class PageController {
-  constructor ($stateParams, stateService) {
+  constructor (page) {
     'ngInject';
 
-    this._$stateParams = $stateParams;
-    State.set(this, stateService);
+    this.page = page[0];
   }
 
   $onInit () {
-    State.get(this).getPage(this._$stateParams).then(res => {
-      this.page = Array.isArray(res) ? res[0] : res;
-    });
+
   }
 }

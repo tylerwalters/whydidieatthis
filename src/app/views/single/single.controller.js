@@ -1,16 +1,11 @@
-const State = new WeakMap();
-
 export default class SingleController {
-  constructor ($stateParams, stateService) {
+  constructor (post) {
     'ngInject';
 
-    this._$stateParams = $stateParams;
-    State.set(this, stateService);
+    this.post = post[0];
   }
 
   $onInit () {
-    State.get(this).getSingle(this._$stateParams).then(res => {
-      this.post = Array.isArray(res) ? res[0] : res;
-    });
+
   }
 }

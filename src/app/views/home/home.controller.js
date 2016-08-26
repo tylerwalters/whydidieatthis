@@ -1,19 +1,18 @@
-const State = new WeakMap();
-
 export default class HomeController {
-  constructor (stateService) {
+  constructor (posts, categories) {
     'ngInject';
-    
-    State.set(this, stateService);
+
+    this.categories = categories;
+    this.posts = posts;
+
+    this.getCategoryById = function(id) {
+      return this.categories.filter(function(cat) {
+        return cat.id === id;
+      })[0];
+    }
   }
 
   $onInit () {
-    State.get(this).getCategories().then(res => {
-      this.categories = Array.isArray(res) ? State.get(this).convertCategories(res) : res;
-    });
 
-    State.get(this).getPosts().then(res => {
-      this.posts = res;
-    });
   }
 }
