@@ -10,7 +10,8 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
       templateUrl: pageTemplate,
       params: {id: 39, name: 'about'},
       resolve: {
-        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise
+        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise,
+        title: page => page[0].title.rendered
       },
       controller: 'PageController',
       controllerAs: '$ctrl',
@@ -19,14 +20,22 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
     .state('rankings', {
       url: '/rankings',
       templateUrl: rankingsTemplate,
-      params: {id: 346, name: 'rankings'}
+      params: {id: 346, name: 'rankings'},
+      resolve: {
+        page: $stateParams => [],
+        title: () => 'Rankings'
+      },
+      controller: 'PageController',
+      controllerAs: '$ctrl',
+      bindToController: true
     })
     .state('page', {
       url: '/page/:page',
       templateUrl: pageTemplate,
       params: {id: null},
       resolve: {
-        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise
+        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise,
+        title: page => page[0].title.rendered
       },
       controller: 'PageController',
       controllerAs: '$ctrl',
