@@ -9,6 +9,9 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
       url: '/about',
       templateUrl: pageTemplate,
       params: {id: 39, name: 'about'},
+      resolve: {
+        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise
+      },
       controller: 'PageController',
       controllerAs: '$ctrl',
       bindToController: true
@@ -22,6 +25,9 @@ export default function routes ($stateProvider, $urlMatcherFactoryProvider) {
       url: '/page/:page',
       templateUrl: pageTemplate,
       params: {id: null},
+      resolve: {
+        page: ($stateParams, pageService) => pageService.query({'filter[name]': $stateParams.name}).$promise
+      },
       controller: 'PageController',
       controllerAs: '$ctrl',
       bindToController: true
